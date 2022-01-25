@@ -1,6 +1,8 @@
 package root.forza.telemetry;
 
 import android.app.*;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.net.wifi.*;
 import android.os.*;
 import android.view.*;
@@ -12,8 +14,9 @@ import java.net.*;
 import android.text.format.Formatter;
 
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
     TextView isRaceOn_TextView,
              timestamp_TextView;
     TextView engineMaxRPM_TextView,
@@ -223,7 +226,16 @@ public class MainActivity extends Activity {
         portNumber = (EditText) findViewById(R.id.port);
         deviceIp.setText(getDeviceIp());
 
-
+        SharedPreferences settings = getSharedPreferences("ForzaPrefs", 0);
+        if (!settings.getBoolean("firstRun", false)) {
+           new AlertDialog.Builder(this)
+                   .setCancelable(true)
+                   .setTitle("Version [0.1.3]")
+                   .setMessage("Thank you for using ForzaOpenTunes software! This app was created for the purpose of fine tuning your builds to achieve the perfect tune. You could use this to reverse engineer tunes as well. If you'd like to hang out, discuss tunes, or just talk cars in general, join the discord or subreddit :) https://discord.gg/hhRPr2Gn\nhttps://reddit.com/r/ForzaOpenTunes\n\nTo report a bug, please message me on discord (root.#3543) or reddit (u/hey-im-root)")
+                   .setPositiveButton("Ok", (dialog, id) -> dialog.dismiss())
+                   .create().show();
+           settings.edit().putBoolean("firstRun", true).apply();
+        }
     }
 
     public String getDeviceIp() {
