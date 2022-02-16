@@ -5,6 +5,13 @@
     android:layout_height="match_parent"
     android:gravity="left"
     android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary">
+    </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
         android:orientation="vertical"
@@ -192,11 +199,11 @@
                     android:id="@+id/velocityZ_id"/>
 
                 <TextView
+                    android:id="@+id/averageVelocity_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:text="averageVelocity: 0"
-                    android:id="@+id/averageVelocity_id"/>
+                    android:text="*averageVelocity: 0"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -575,30 +582,33 @@
                     android:textSize="12sp"
                     android:text="speed (m/s): 0"
                     android:id="@+id/speedMps_id"/>
+
                 <TextView
+                    android:id="@+id/speedMph_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:text="speed (mph): 0"
-                    android:id="@+id/speedMph_id"/>
+                    android:text="*speed (mph): 0"
+                    android:textSize="12sp" />
+
                 <TextView
+                    android:id="@+id/speedKph_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:text="speed (kph): 0"
-                    android:id="@+id/speedKph_id"/>
+                    android:text="*speed (kph): 0"
+                    android:textSize="12sp" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
                     android:text="power (watts): 0"
                     android:id="@+id/power_id"/>
+
                 <TextView
+                    android:id="@+id/horsepower_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:text="horsepower: 0"
-                    android:id="@+id/horsepower_id"/>
+                    android:text="*horsepower: 0"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -636,18 +646,24 @@
                     android:id="@+id/tireTempRearRight_id"/>
 
                 <TextView
+                    android:id="@+id/tireTempAverageFront_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:text="tireTempAverageFront: 0"
-                    android:id="@+id/tireTempAverageFront_id"/>
+                    android:text="*tireTempAverageFront: 0"
+                    android:textSize="12sp" />
 
                 <TextView
+                    android:id="@+id/tireTempAverageRear_id"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="12sp"
-                    android:text="tireTempAverageRear: 0"
-                    android:id="@+id/tireTempAverageRear_id"/>
+                    android:text="*tireTempAverageRear: 0"
+                    android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/tireTempAverageTotal_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*tireTempAverageTotal: 0"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -716,8 +732,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="12sp"
-                    android:text="accel: 0"
-                    android:id="@+id/accel_id"/>
+                    android:text="throttle: 0"
+                    android:id="@+id/throttle_id"/>
 
                 <TextView
                     android:layout_width="wrap_content"

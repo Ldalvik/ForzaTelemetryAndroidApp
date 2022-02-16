@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <PreferenceCategory
+        android:key="about"
+        android:title="About">
+        <PreferenceScreen android:title="r/ForzaOpenTunes">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://reddit.com/r/ForzaOpenTunes"
+                />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="ForzaOpenTunes Discord">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://discord.gg/"
+                />
+        </PreferenceScreen>
+        <Preference
+            android:key="version"
+            android:selectable="false"
+            android:persistent="false"
+            android:title="Version"
+            android:summary="Version BETA.0.1.3"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="general"
+        android:title="General">
+
+        <androidx.preference.SwitchPreference
+            android:defaultValue="false"
+            android:key="dark_mode"
+            android:summary="Enable dark mode"
+            android:title="Enable Dark mode" />
+        <PreferenceScreen
+            android:key="reset"
+            android:selectable="true"
+            android:title="Reset settings"
+            android:summary="Reset all settings back to their default state"/>
+    </PreferenceCategory>
+
+    <!-- <androidx.preference.SwitchPreference
+        android:defaultValue="true"
+        android:key="isRaceOn"
+        android:summary="race"
+        android:title="isRaceOn" /> -->
+
+</androidx.preference.PreferenceScreen>
