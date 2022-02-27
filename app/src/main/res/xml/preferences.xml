@@ -5,6 +5,12 @@
     <PreferenceCategory
         android:key="about"
         android:title="About">
+        <PreferenceScreen android:title="Github source code">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://github.com/Ldalvik/ForzaTelemetryAndroidApp"
+                />
+        </PreferenceScreen>
         <PreferenceScreen android:title="r/ForzaOpenTunes">
             <intent
                 android:action="android.intent.action.VIEW"
@@ -14,7 +20,7 @@
         <PreferenceScreen android:title="ForzaOpenTunes Discord">
             <intent
                 android:action="android.intent.action.VIEW"
-                android:data="http://discord.gg/"
+                android:data="http://discord.gg/K2Kk5Kj6PP"
                 />
         </PreferenceScreen>
         <Preference

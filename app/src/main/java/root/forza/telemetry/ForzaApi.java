@@ -2,6 +2,7 @@ package root.forza.telemetry;
 
 import android.os.Build;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
 import java.math.BigDecimal;
@@ -15,7 +16,7 @@ import java.util.Locale;
 
 public class ForzaApi {
     public static final int PACKET_SIZE = 323;
-    private boolean readOK = false;
+    private boolean readOK;
     DecimalFormat df;
 
     private boolean isRaceOn;
@@ -130,7 +131,7 @@ public class ForzaApi {
         bb.order(ByteOrder.LITTLE_ENDIAN);
 
         try {
-            isRaceOn = getFromBuffer(bb, int.class) == 1 ? true : false;
+            isRaceOn = getFromBuffer(bb, int.class) == 1;
             timeStampMS = getFromBuffer(bb, long.class);
             engineMaxRpm = getFromBuffer(bb, float.class);
             engineIdleRpm = getFromBuffer(bb, float.class);
@@ -789,6 +790,7 @@ public class ForzaApi {
         return new SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(new Date(i));
     }
 
+    @NonNull
     @Override
     public String toString() {
         return "{" +
