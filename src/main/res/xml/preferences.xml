@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+    <PreferenceCategory
+        android:title="About">
+        <PreferenceScreen
+            android:title="r/ForzaOpenTunes"
+            android:summary="Sub-reddit for OPTN.club (ForzaOpenTunes)">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://reddit.com/r/ForzaOpenTunes"
+                />
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:title="OPTN.tools Discord"
+            android:summary="Keep up to date with new OPTN.tools software and updates">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://discord.gg/jSWAwDZGK2"
+                />
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:title="OPTN.club Discord"
+            android:summary="Discord for OPTN.club">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://discord.gg/K2Kk5Kj6PP"
+                />
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:title="How To Use"
+            android:summary="Tutorial on how to use the app"
+            android:key="tutorial" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Settings">
+
+   <!-- <androidx.preference.SwitchPreference
+            android:defaultValue="false"
+            android:key="dark_mode"
+            android:title="Light mode" /> -->
+
+        <androidx.preference.SwitchPreference
+            android:defaultValue="false"
+            android:key="is_metric"
+            android:title="Metric units"
+            android:summary="Use celsius for temperature"/>
+
+        <androidx.preference.SwitchPreference
+            android:defaultValue="false"
+            android:key="show_fps"
+            android:title="Show FPS"
+            android:summary="This will update only when a connection is established. Shows up above 'isRaceOn'"/>
+
+        <!--  <PreferenceScreen
+           android:key="reset"
+           android:selectable="true"
+           android:title="Reset settings"
+           android:summary="Reset all settings back to their default state"/> -->
+
+</PreferenceCategory>
+<PreferenceCategory>
+    <Preference
+        android:persistent="false"
+        android:layout="@layout/credits_pref"/>
+</PreferenceCategory>
+
+    <!-- <androidx.preference.SwitchPreference
+       android:defaultValue="true"
+       android:key="isRaceOn"
+       android:summary="race"
+       android:title="isRaceOn" /> -->
+
+</androidx.preference.PreferenceScreen>
